@@ -4,7 +4,7 @@ using System.Collections;
 
 
 [RequireComponent(typeof(Image))]
-public class CRGTSpriteToggle : MonoBehaviour {
+public class SpriteToggle : MonoBehaviour {
 
     public Sprite ImageOn;
     public Sprite ImageOff;

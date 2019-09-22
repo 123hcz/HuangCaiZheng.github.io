@@ -5,10 +5,10 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 #endif
 
-public class CRGTGameManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 
-    public static CRGTGameManager instance = null;
+    public static GameManager instance = null;
 
     float startGameSpeed = 1.0f;
     public float gameSpeed = 1.0f;
@@ -103,7 +103,7 @@ public class CRGTGameManager : MonoBehaviour
         LoadGameData();
         ShowGameMenu();
 
-       // GoogleAdsManager.Instance.InterstialDoneCallback = InterstialDone;
+       
 
     }
     bool clean = false;
@@ -293,7 +293,7 @@ public class CRGTGameManager : MonoBehaviour
 
 
 
-    #region --------------- MENUS AND GAME CONTROL --------------- 
+    #region 
     public void ShowGameMenu()
     {
         gameOverCanvas.SetActive(false);
@@ -569,36 +569,5 @@ public class CRGTGameManager : MonoBehaviour
 
     #endregion
 
-    #region --------------- ADVERTISING ---------------
 
-    public void InterstialDone()
-    {
-        GameQuitNow();
-    }
-
-    private void RequestInterstial()
-    {
-        GoogleAdsManager.Instance.RequestInterstitial();
-    }
-
-    private void DisplayInterstial()
-    {
-        if (GoogleAdsManager.Instance.displayInterstial)
-            GoogleAdsManager.Instance.ShowInterstitial();
-        else
-            InterstialDone();
-    }
-
-    private void DisplayBanner(bool show)
-    {
-        if (GoogleAdsManager.Instance.displayBanner)
-        {
-            if (show)
-                GoogleAdsManager.Instance.ShowBanner();
-            else
-                GoogleAdsManager.Instance.HideBanner();
-        }
-    }
-
-    #endregion
 }

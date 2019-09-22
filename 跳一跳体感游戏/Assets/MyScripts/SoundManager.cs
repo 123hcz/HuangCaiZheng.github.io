@@ -2,9 +2,9 @@
 using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
-public class CRGTSoundManager : MonoBehaviour {
+public class SoundManager : MonoBehaviour {
 
-    public static CRGTSoundManager instance = null;
+    public static SoundManager instance = null;
 
     public AudioSource efxSource;
     public AudioSource musicSource;

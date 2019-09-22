@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CRGTRemoveAfterTime : MonoBehaviour {
+public class RemoveAfterTime : MonoBehaviour {
 
 	public float removeAfterTime = 0f;
 

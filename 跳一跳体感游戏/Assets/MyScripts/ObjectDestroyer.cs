@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CRGTObjectDestroyer : MonoBehaviour {
+public class ObjectDestroyer : MonoBehaviour {
 
 	public bool removeTarget = false;
 	public float removeTargetTime = 0.0f;

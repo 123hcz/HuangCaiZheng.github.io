@@ -8,7 +8,7 @@ public enum ControlType
     TOUCH
 }
 
-public class CRGTPlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     public ControlType playerControlType;
     public static bool isAlive;
@@ -64,37 +64,7 @@ public class CRGTPlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-#if UNITY_ANDROID || UNITY_IOS
-#if UNITY_EDITOR
-        playerVelX = Input.GetAxis("Horizontal");
-#else
-		if (playerControlType == ControlType.ACCELEROMETER)
-        {
-            playerVelX = Input.acceleration.x;
-        }
-        else
-        {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    if (touch.position.x < Screen.width / 2f)
-                    {
-                        playerVelX = -1;
-                    }
-                    else
-                    {
-                        playerVelX = 1;
-                    }
-                }
-            }
-            else
-                playerVelX = 0;
-        }
-        
-#endif
-#else
+
 		playerVelX = Input.GetAxis("Horizontal");
         if (controls.control >= 0.05f) {
             playerVelX = -0.4f;
@@ -109,7 +79,6 @@ public class CRGTPlayerController : MonoBehaviour {
         }
 
         //print("playerVelX="+playerVelX);
-#endif
 
         rigBody2D.velocity = new Vector3(playerVelX, 0, 0) * playerSideSpeed;
         rigBody2D.position = new Vector3(Mathf.Clamp(rigBody2D.position.x, playerMinX, playerMaxX), playerPosY, 0f);

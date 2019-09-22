@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CRGTMaterialMover : MonoBehaviour {
+public class MaterialMover : MonoBehaviour {
 
 	public float materialSpeedX = 0.0f;
 	public float materialSpeedY = 1.0f;
@@ -14,7 +14,7 @@ public class CRGTMaterialMover : MonoBehaviour {
 	
 	void Update ()
     {
-       materialOffset = new Vector2(materialSpeedX * CRGTGameManager.instance.gameSpeed * Time.time, materialSpeedY * CRGTGameManager.instance.gameSpeed * Time.time);
+       materialOffset = new Vector2(materialSpeedX * GameManager.instance.gameSpeed * Time.time, materialSpeedY * GameManager.instance.gameSpeed * Time.time);
        materialRenderer.material.mainTextureOffset = materialOffset;
     }
 }

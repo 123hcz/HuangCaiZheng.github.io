@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CRGTObjectMover : MonoBehaviour {
+public class ObjectMover : MonoBehaviour {
 
 	public float objectSpeed = -3.0f;
     public float objectMoveX = 0;
@@ -11,7 +11,7 @@ public class CRGTObjectMover : MonoBehaviour {
 
     void Update ()
     {
-        transform.Translate(new Vector3(objectMoveX, objectMoveY, objectMoveZ) * objectSpeed * CRGTGameManager.instance.gameSpeed * Time.deltaTime);
+        transform.Translate(new Vector3(objectMoveX, objectMoveY, objectMoveZ) * objectSpeed * GameManager.instance.gameSpeed * Time.deltaTime);
         
         
     }

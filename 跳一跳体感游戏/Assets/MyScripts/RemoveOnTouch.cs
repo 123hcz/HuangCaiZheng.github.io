@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CRGTRemoveOnTouch : MonoBehaviour {
+public class RemoveOnTouch : MonoBehaviour {
 
 	public string TargetTag = "DeathLine";
 	public bool removeTarget = false;

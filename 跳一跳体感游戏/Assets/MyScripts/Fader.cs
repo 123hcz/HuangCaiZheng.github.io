@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CRGTFader : MonoBehaviour {
+public class Fader : MonoBehaviour {
 
     public CanvasGroup faderGroup;
     public float fadeTime = 0.25f;

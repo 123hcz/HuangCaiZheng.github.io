@@ -3,7 +3,7 @@ using System.Collections;
 
 
 [RequireComponent (typeof(GUIText))]
-public class CRGTFps : MonoBehaviour {
+public class Fps : MonoBehaviour {
 
 	public float updateInterval = 0.5f;
 	private float accum;
